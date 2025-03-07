@@ -10,7 +10,7 @@ type Activity struct {
 	// PLAYING = 0
 	// LISTENING = 2
 	// WATCHING = 3
-	ActivityType int
+	Type int
 	// What the player is currently doing
 	Details string
 	// The user's current party status
@@ -71,9 +71,9 @@ type Secrets struct {
 
 func mapActivity(activity *Activity) *PayloadActivity {
 	final := &PayloadActivity{
-		ActivityType: activity.ActivityType,
-		Details:      activity.Details,
-		State:        activity.State,
+		Type:    activity.Type,
+		Details: activity.Details,
+		State:   activity.State,
 		Assets: PayloadAssets{
 			LargeImage: activity.LargeImage,
 			LargeText:  activity.LargeText,
