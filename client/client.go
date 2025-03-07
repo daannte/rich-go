@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/hugolgst/rich-go/ipc"
+	"github.com/daannte/rich-go/ipc"
 )
 
 var logged bool
@@ -54,7 +54,6 @@ func SetActivity(activity Activity) error {
 		},
 		getNonce(),
 	})
-
 	if err != nil {
 		return err
 	}

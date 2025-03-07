@@ -6,6 +6,11 @@ import (
 
 // Activity holds the data for discord rich presence
 type Activity struct {
+	// What type of activity
+	// PLAYING = 0
+	// LISTENING = 2
+	// WATCHING = 3
+	ActivityType int
 	// What the player is currently doing
 	Details string
 	// The user's current party status
@@ -66,8 +71,9 @@ type Secrets struct {
 
 func mapActivity(activity *Activity) *PayloadActivity {
 	final := &PayloadActivity{
-		Details: activity.Details,
-		State:   activity.State,
+		ActivityType: activity.ActivityType,
+		Details:      activity.Details,
+		State:        activity.State,
 		Assets: PayloadAssets{
 			LargeImage: activity.LargeImage,
 			LargeText:  activity.LargeText,

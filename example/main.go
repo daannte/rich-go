@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/hugolgst/rich-go/client"
+	"github.com/daannte/rich-go/client"
 )
 
 func main() {
@@ -30,13 +30,12 @@ func main() {
 			Start: &now,
 		},
 		Buttons: []*client.Button{
-			&client.Button{
+			{
 				Label: "GitHub",
 				Url:   "https://github.com/hugolgst/rich-go",
 			},
 		},
 	})
-
 	if err != nil {
 		panic(err)
 	}
